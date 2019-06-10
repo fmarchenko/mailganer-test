@@ -15,8 +15,17 @@ docker-compose up -d
     docker-compose exec web ./manage.py changepassword admin
     ```
 
-2. Enter to Django admin interface http://localhost:8000/admin/.
+2. Enter to Django admin interface: http://localhost:8000/admin/.
 
     Default credentials:
     - username: admin
     - password: Zaq1Xsw2
+
+3. For looking sending emails in console use the next command:
+```sh
+docker-compose logs -f celery
+```
+
+4. Create Event for send emails use this url: http://localhost:8000/events/
+
+5. Flower for monitoring Celery tasks: http://localhost:8005/tasks
